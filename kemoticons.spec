@@ -6,7 +6,7 @@
 #
 Name     : kemoticons
 Version  : 5.52.0
-Release  : 6
+Release  : 7
 URL      : https://download.kde.org/stable/frameworks/5.52/kemoticons-5.52.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.52/kemoticons-5.52.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.52/kemoticons-5.52.0.tar.xz.sig
@@ -27,14 +27,6 @@ Convert text emoticons to graphical emoticons
 KEmoticons converts emoticons from text to a graphical representation with
 images in HTML. It supports setting different themes for emoticons coming
 from different providers.
-
-%package abi
-Summary: abi components for the kemoticons package.
-Group: Default
-
-%description abi
-abi components for the kemoticons package.
-
 
 %package data
 Summary: data components for the kemoticons package.
@@ -81,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541878747
+export SOURCE_DATE_EPOCH=1542740880
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -89,7 +81,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1541878747
+export SOURCE_DATE_EPOCH=1542740880
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kemoticons
 cp COPYING %{buildroot}/usr/share/package-licenses/kemoticons/COPYING
@@ -101,10 +93,6 @@ popd
 
 %files
 %defattr(-,root,root,-)
-
-%files abi
-%defattr(-,root,root,-)
-/usr/share/abi/libKF5Emoticons.so.5.52.0.abi
 
 %files data
 %defattr(-,root,root,-)
