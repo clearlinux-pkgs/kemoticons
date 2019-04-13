@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kemoticons
-Version  : 5.56.0
-Release  : 12
-URL      : https://download.kde.org/stable/frameworks/5.56/kemoticons-5.56.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.56/kemoticons-5.56.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.56/kemoticons-5.56.0.tar.xz.sig
+Version  : 5.57.0
+Release  : 13
+URL      : https://download.kde.org/stable/frameworks/5.57/kemoticons-5.57.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.57/kemoticons-5.57.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.57/kemoticons-5.57.0.tar.xz.sig
 Summary  : Support for emoticons and emoticons themes
 Group    : Development/Tools
 License  : CC-BY-4.0 GPL-2.0 LGPL-2.1
@@ -67,23 +67,22 @@ license components for the kemoticons package.
 
 
 %prep
-%setup -q -n kemoticons-5.56.0
+%setup -q -n kemoticons-5.57.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552159572
+export SOURCE_DATE_EPOCH=1555192123
 mkdir -p clr-build
 pushd clr-build
-export LDFLAGS="${LDFLAGS} -fno-lto"
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1552159572
+export SOURCE_DATE_EPOCH=1555192123
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kemoticons
 cp COPYING %{buildroot}/usr/share/package-licenses/kemoticons/COPYING
@@ -1816,7 +1815,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Emoticons.so.5
-/usr/lib64/libKF5Emoticons.so.5.56.0
+/usr/lib64/libKF5Emoticons.so.5.57.0
 /usr/lib64/qt5/plugins/kf5/KEmoticonsIntegrationPlugin.so
 /usr/lib64/qt5/plugins/kf5/emoticonsthemes/adium.so
 /usr/lib64/qt5/plugins/kf5/emoticonsthemes/kde.so
