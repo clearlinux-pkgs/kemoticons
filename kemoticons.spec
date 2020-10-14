@@ -5,14 +5,14 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kemoticons
-Version  : 5.73.0
-Release  : 30
-URL      : https://download.kde.org/stable/frameworks/5.73/kemoticons-5.73.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.73/kemoticons-5.73.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.73/kemoticons-5.73.0.tar.xz.sig
+Version  : 5.75.0
+Release  : 31
+URL      : https://download.kde.org/stable/frameworks/5.75/kemoticons-5.75.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.75/kemoticons-5.75.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.75/kemoticons-5.75.0.tar.xz.sig
 Summary  : Support for emoticons and emoticons themes
 Group    : Development/Tools
-License  : CC-BY-4.0 GPL-2.0 LGPL-2.1
+License  : GPL-2.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
 Requires: kemoticons-data = %{version}-%{release}
 Requires: kemoticons-lib = %{version}-%{release}
 Requires: kemoticons-license = %{version}-%{release}
@@ -73,15 +73,15 @@ license components for the kemoticons package.
 
 
 %prep
-%setup -q -n kemoticons-5.73.0
-cd %{_builddir}/kemoticons-5.73.0
+%setup -q -n kemoticons-5.75.0
+cd %{_builddir}/kemoticons-5.75.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1597703311
+export SOURCE_DATE_EPOCH=1602691570
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -97,12 +97,15 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1597703311
+export SOURCE_DATE_EPOCH=1602691570
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kemoticons
-cp %{_builddir}/kemoticons-5.73.0/COPYING %{buildroot}/usr/share/package-licenses/kemoticons/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/kemoticons-5.73.0/COPYING.CC-BY %{buildroot}/usr/share/package-licenses/kemoticons/1167f0e28fe2db01e38e883aaf1e749fb09f9ceb
-cp %{_builddir}/kemoticons-5.73.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kemoticons/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kemoticons-5.75.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kemoticons/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+cp %{_builddir}/kemoticons-5.75.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kemoticons/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kemoticons-5.75.0/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/kemoticons/6f1f675aa5f6a2bbaa573b8343044b166be28399
+cp %{_builddir}/kemoticons-5.75.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kemoticons/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/kemoticons-5.75.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kemoticons/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kemoticons-5.75.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kemoticons/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -1831,7 +1834,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Emoticons.so.5
-/usr/lib64/libKF5Emoticons.so.5.73.0
+/usr/lib64/libKF5Emoticons.so.5.75.0
 /usr/lib64/qt5/plugins/kf5/KEmoticonsIntegrationPlugin.so
 /usr/lib64/qt5/plugins/kf5/emoticonsthemes/adium.so
 /usr/lib64/qt5/plugins/kf5/emoticonsthemes/kde.so
@@ -1840,6 +1843,8 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/kemoticons/1167f0e28fe2db01e38e883aaf1e749fb09f9ceb
-/usr/share/package-licenses/kemoticons/7c203dee3a03037da436df03c4b25b659c073976
-/usr/share/package-licenses/kemoticons/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+/usr/share/package-licenses/kemoticons/20079e8f79713dce80ab09774505773c926afa2a
+/usr/share/package-licenses/kemoticons/6f1f675aa5f6a2bbaa573b8343044b166be28399
+/usr/share/package-licenses/kemoticons/757b86330df80f81143d5916b3e92b4bcb1b1890
+/usr/share/package-licenses/kemoticons/e458941548e0864907e654fa2e192844ae90fc32
+/usr/share/package-licenses/kemoticons/e712eadfab0d2357c0f50f599ef35ee0d87534cb
