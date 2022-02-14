@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kemoticons
-Version  : 5.90.0
-Release  : 43
-URL      : https://download.kde.org/stable/frameworks/5.90/kemoticons-5.90.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.90/kemoticons-5.90.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.90/kemoticons-5.90.0.tar.xz.sig
+Version  : 5.91.0
+Release  : 44
+URL      : https://download.kde.org/stable/frameworks/5.91/kemoticons-5.91.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.91/kemoticons-5.91.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.91/kemoticons-5.91.0.tar.xz.sig
 Summary  : Support for emoticons and emoticons themes
 Group    : Development/Tools
 License  : CC-BY-4.0 CC0-1.0 GPL-2.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -73,15 +73,15 @@ license components for the kemoticons package.
 
 
 %prep
-%setup -q -n kemoticons-5.90.0
-cd %{_builddir}/kemoticons-5.90.0
+%setup -q -n kemoticons-5.91.0
+cd %{_builddir}/kemoticons-5.91.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1642014557
+export SOURCE_DATE_EPOCH=1644802280
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -97,17 +97,17 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1642014557
+export SOURCE_DATE_EPOCH=1644802280
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kemoticons
-cp %{_builddir}/kemoticons-5.90.0/LICENSES/CC-BY-4.0.txt %{buildroot}/usr/share/package-licenses/kemoticons/34c678c18b31bda8b152e1462bad0c0428c69b44
-cp %{_builddir}/kemoticons-5.90.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kemoticons/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
-cp %{_builddir}/kemoticons-5.90.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kemoticons/e712eadfab0d2357c0f50f599ef35ee0d87534cb
-cp %{_builddir}/kemoticons-5.90.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kemoticons/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kemoticons-5.90.0/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/kemoticons/6f1f675aa5f6a2bbaa573b8343044b166be28399
-cp %{_builddir}/kemoticons-5.90.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kemoticons/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/kemoticons-5.90.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kemoticons/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/kemoticons-5.90.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kemoticons/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kemoticons-5.91.0/LICENSES/CC-BY-4.0.txt %{buildroot}/usr/share/package-licenses/kemoticons/34c678c18b31bda8b152e1462bad0c0428c69b44
+cp %{_builddir}/kemoticons-5.91.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kemoticons/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
+cp %{_builddir}/kemoticons-5.91.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kemoticons/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+cp %{_builddir}/kemoticons-5.91.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kemoticons/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kemoticons-5.91.0/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/kemoticons/6f1f675aa5f6a2bbaa573b8343044b166be28399
+cp %{_builddir}/kemoticons-5.91.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kemoticons/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/kemoticons-5.91.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kemoticons/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kemoticons-5.91.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kemoticons/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -1823,9 +1823,9 @@ popd
 /usr/include/KF5/KEmoticons/KEmoticonsTheme
 /usr/include/KF5/KEmoticons/kemoticons.h
 /usr/include/KF5/KEmoticons/kemoticons_export.h
+/usr/include/KF5/KEmoticons/kemoticons_version.h
 /usr/include/KF5/KEmoticons/kemoticonsprovider.h
 /usr/include/KF5/KEmoticons/kemoticonstheme.h
-/usr/include/KF5/kemoticons_version.h
 /usr/lib64/cmake/KF5Emoticons/KF5EmoticonsConfig.cmake
 /usr/lib64/cmake/KF5Emoticons/KF5EmoticonsConfigVersion.cmake
 /usr/lib64/cmake/KF5Emoticons/KF5EmoticonsTargets-relwithdebinfo.cmake
@@ -1836,7 +1836,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Emoticons.so.5
-/usr/lib64/libKF5Emoticons.so.5.90.0
+/usr/lib64/libKF5Emoticons.so.5.91.0
 /usr/lib64/qt5/plugins/kf5/KEmoticonsIntegrationPlugin.so
 /usr/lib64/qt5/plugins/kf5/emoticonsthemes/adium.so
 /usr/lib64/qt5/plugins/kf5/emoticonsthemes/kde.so
