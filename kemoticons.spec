@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kemoticons
-Version  : 5.102.0
-Release  : 55
-URL      : https://download.kde.org/stable/frameworks/5.102/kemoticons-5.102.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.102/kemoticons-5.102.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.102/kemoticons-5.102.0.tar.xz.sig
+Version  : 5.103.0
+Release  : 56
+URL      : https://download.kde.org/stable/frameworks/5.103/kemoticons-5.103.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.103/kemoticons-5.103.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.103/kemoticons-5.103.0.tar.xz.sig
 Summary  : Support for emoticons and emoticons themes
 Group    : Development/Tools
 License  : CC-BY-4.0 CC0-1.0 GPL-2.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -76,15 +76,15 @@ license components for the kemoticons package.
 
 
 %prep
-%setup -q -n kemoticons-5.102.0
-cd %{_builddir}/kemoticons-5.102.0
+%setup -q -n kemoticons-5.103.0
+cd %{_builddir}/kemoticons-5.103.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1673900207
+export SOURCE_DATE_EPOCH=1676318623
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -100,7 +100,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1673900207
+export SOURCE_DATE_EPOCH=1676318623
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kemoticons
 cp %{_builddir}/kemoticons-%{version}/LICENSES/CC-BY-4.0.txt %{buildroot}/usr/share/package-licenses/kemoticons/34c678c18b31bda8b152e1462bad0c0428c69b44 || :
@@ -1839,7 +1839,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Emoticons.so.5
-/usr/lib64/libKF5Emoticons.so.5.102.0
+/usr/lib64/libKF5Emoticons.so.5.103.0
 /usr/lib64/qt5/plugins/kf5/KEmoticonsIntegrationPlugin.so
 /usr/lib64/qt5/plugins/kf5/emoticonsthemes/adium.so
 /usr/lib64/qt5/plugins/kf5/emoticonsthemes/kde.so
