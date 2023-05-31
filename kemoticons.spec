@@ -7,7 +7,7 @@
 #
 Name     : kemoticons
 Version  : 5.106.0
-Release  : 60
+Release  : 61
 URL      : https://download.kde.org/stable/frameworks/5.106/kemoticons-5.106.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.106/kemoticons-5.106.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.106/kemoticons-5.106.0.tar.xz.sig
@@ -85,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684861895
+export SOURCE_DATE_EPOCH=1685574981
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -118,7 +118,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684861895
+export SOURCE_DATE_EPOCH=1685574981
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kemoticons
 cp %{_builddir}/kemoticons-%{version}/LICENSES/CC-BY-4.0.txt %{buildroot}/usr/share/package-licenses/kemoticons/34c678c18b31bda8b152e1462bad0c0428c69b44 || :
@@ -1843,7 +1843,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5Emoticons.so
 /usr/include/KF5/KEmoticons/KEmoticons
 /usr/include/KF5/KEmoticons/KEmoticonsProvider
 /usr/include/KF5/KEmoticons/KEmoticonsTheme
@@ -1861,7 +1860,6 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5Emoticons.so.5
 /V3/usr/lib64/libKF5Emoticons.so.5.106.0
 /V3/usr/lib64/qt5/plugins/kf5/KEmoticonsIntegrationPlugin.so
 /V3/usr/lib64/qt5/plugins/kf5/emoticonsthemes/adium.so
